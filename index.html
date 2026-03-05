@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tammam Altaki | Digital Transformation Lead & ERP Consultant</title>
+  <meta
+    name="description"
+    content="Portfolio and business website for Tammam Altaki, a Dubai-based Digital Transformation Lead and ERP Consultant focused on ERP delivery, AI automation, enterprise integration, and executive data visibility."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #181c26;
+      --text: #5e5c59;
+      --muted: #8a8f9e;
+      --accent: #c9a96e;
+      --accent-soft: #1e2030;
+      --border: #272b38;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      --font-display: "Cormorant Garamond", serif;
+      --font-body: "Jost", sans-serif;
+      --max-width: 1100px;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --section-space: 108px;
+      --nav-height: 88px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; border: 0; background: none; }
+
+    .container { width: min(calc(100% - 2rem), var(--max-width)); margin: 0 auto; }
+    .section { padding: var(--section-space) 0; }
+
+    .section-label {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      max-width: 670px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(15, 17, 23, 0.88);
+      box-shadow: 0 8px 30px rgba(17, 17, 17, 0.05);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--nav-height);
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--text); }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .button,
+    .button-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #000000;
+      box-shadow: 0 12px 30px rgba(10, 37, 64, 0.16);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: #16375a;
+    }
+
+    .button-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .button-ghost:hover,
+    .button-ghost:focus-visible {
+      transform: translateY(-2px);
+      border-color: #d6d6d6;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-cta { margin-left: 10px; }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .menu-toggle svg { width: 22px; height: 22px; }
+    .mobile-drawer { position: fixed; inset: 0; z-index: 999; pointer-events: none; }
+    .mobile-drawer[aria-hidden="false"] { pointer-events: auto; }
+
+    .mobile-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .mobile-drawer[aria-hidden="false"] .mobile-overlay { opacity: 1; }
+
+    .mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(86vw, 360px);
+      height: 100%;
+      padding: 28px 24px;
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      border-left: 1px solid var(--border);
+      transform: translateX(100%);
+      transition: transform var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-drawer[aria-hidden="false"] .mobile-panel { transform: translateX(0); }
+    .mobile-panel-top { display: flex; align-items: center; justify-content: space-between; }
+
+    .mobile-nav { display: grid; gap: 18px; margin-top: 16px; }
+    .mobile-nav a { padding-bottom: 12px; border-bottom: 1px solid var(--border); font-size: 1.05rem; }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+      padding: calc(var(--section-space) + 20px) 0 var(--section-space);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(10, 37, 64, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(10, 37, 64, 0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.18), transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 12% -10% auto auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(10, 37, 64, 0.1), transparent 66%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      max-width: 9.5ch;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+    .trust-chip {
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel-label {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-panel-list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+
+    .hero-panel-list li {
+      display: grid;
+      gap: 4px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-panel-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .hero-panel-kicker { color: var(--muted); font-size: 0.85rem; }
+    .hero-panel-value { font-size: 1.06rem; font-weight: 700; line-height: 1.5; }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .about-copy {
+      font-size: 1.06rem;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .highlight-card,
+    .service-card,
+    .quote-card,
+    .contact-card,
+    .timeline-card,
+    .success-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-card {
+      padding: 22px 20px;
+      min-height: 136px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .highlight-card:hover,
+    .highlight-card:focus-within,
+    .service-card:hover,
+    .service-card:focus-within,
+    .quote-card:hover,
+    .quote-card:focus-within {
+      transform: translateY(-4px);
+      border-color: #d8dee8;
+    }
+
+    .highlight-icon,
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .highlight-card strong { font-size: 1.12rem; line-height: 1.4; }
+    .highlight-card span { color: var(--muted); line-height: 1.6; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .service-card h3 { margin: 0; font-size: 1.15rem; line-height: 1.35; }
+    .service-card p { margin: 0; color: var(--muted); line-height: 1.75; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 26px;
+      margin-top: 44px;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), rgba(10, 37, 64, 0.08));
+    }
+
+    .timeline-item { position: relative; padding-left: 18px; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -0.5px;
+      top: 28px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(10, 37, 64, 0.08);
+    }
+
+    .timeline-card { padding: 28px; }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 14px 0 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .timeline-card h3,
+    .timeline-card h4 { margin: 0; }
+
+    .timeline-card h3 { font-size: 1.22rem; }
+
+    .timeline-card h4 {
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .timeline-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-card li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .timeline-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .quote-card {
+      position: relative;
+      padding: 30px 28px;
+      display: grid;
+      gap: 20px;
+      min-height: 100%;
+    }
+
+    .quote-mark {
+      font-family: var(--font-display);
+      color: var(--accent);
+      font-size: 4rem;
+      line-height: 0.7;
+    }
+
+    .quote-card p { margin: 0; color: var(--muted); line-height: 1.85; }
+
+    .quote-meta {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .quote-meta strong { display: block; margin-bottom: 4px; }
+    .quote-meta span { color: var(--muted); font-size: 0.95rem; }
+    .testimonial-note { margin-top: 16px; color: var(--muted); font-size: 0.92rem; }
+
+    .contact-grid { margin-top: 40px; }
+    .contact-card, .contact-form { padding: 30px; }
+    .contact-list { display: grid; gap: 18px; margin: 26px 0 0; }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact-item strong { display: block; color: var(--text); }
+
+    .contact-item svg,
+    .footer-link svg {
+      flex: none;
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+
+    .availability {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .success-banner {
+      display: none;
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      border-color: #d4e3f3;
+      background: #f6fbff;
+      color: var(--accent);
+      box-shadow: none;
+    }
+
+    .success-banner.is-visible { display: block; }
+
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid { display: grid; gap: 16px; }
+    .field { display: grid; gap: 8px; }
+    .field label { font-size: 0.94rem; font-weight: 700; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus,
+    .button:focus-visible,
+    .button-ghost:focus-visible,
+    .menu-toggle:focus-visible,
+    a:focus-visible {
+      outline: none;
+      border-color: #9db6d1;
+      box-shadow: 0 0 0 4px rgba(10, 37, 64, 0.1);
+    }
+
+    .field textarea { min-height: 160px; resize: vertical; }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .form-note { margin: 14px 0 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+    .site-footer {
+      padding: 34px 0 30px;
+      border-top: 1px solid var(--border);
+      background: #fcfcfb;
+    }
+
+    .footer-shell {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .footer-brand span,
+    .footer-meta { color: var(--muted); line-height: 1.6; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .footer-link:hover,
+    .footer-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: #d6d6d6;
+    }
+
+    .footer-meta {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .hero-stagger {
+      opacity: 0;
+      transform: translateY(26px);
+      animation: heroIn 800ms ease forwards;
+    }
+
+    .hero-stagger:nth-child(2) { animation-delay: 120ms; }
+    .hero-stagger:nth-child(3) { animation-delay: 220ms; }
+    .hero-stagger:nth-child(4) { animation-delay: 320ms; }
+
+    @keyframes heroIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid, .contact-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .hero-title { max-width: 12ch; }
+      .services-grid, .testimonials-grid { gap: 16px; }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .section { padding: 92px 0; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --section-space: 88px; }
+      .hero { padding-top: 86px; }
+      .hero-title { font-size: clamp(2.7rem, 16vw, 4rem); }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .timeline { padding-left: 24px; }
+      .timeline-card, .contact-card, .contact-form { padding: 24px; }
+      .footer-shell { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+      }
+      .reveal, .hero-stagger { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Tammam Altaki home">TAMMAM ALTAKI</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="button nav-cta" href="#contact">Let's Work Together</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-overlay" data-close-menu></div>
+    <aside class="mobile-panel" aria-label="Mobile navigation">
+      <div class="mobile-panel-top">
+        <span class="brand">Tammam Altaki</span>
+        <button class="menu-toggle" type="button" data-close-menu aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button" href="#contact">Let's Work Together</a>
+    </aside>
+  </div>
+
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow hero-stagger">Dubai, UAE / Available for advisory, consulting, and senior leadership roles</div>
+          <h1 class="hero-title hero-stagger">Digital Transformation &amp; Business Applications Consultant</h1>
+          <p class="hero-copy hero-stagger">
+            Turning complex systems into business clarity. 6+ years delivering enterprise ERP transformations, AI-driven automation, and multi-system integration across construction, manufacturing, sports, and real estate industries in the UAE and GCC.
+          </p>
+          <div class="hero-actions hero-stagger">
+            <a class="button" href="#experience">View My Work</a>
+            <a class="button-ghost" href="#" aria-label="Download CV">Download CV</a>
+          </div>
+          <div class="trust-row hero-stagger" aria-label="Technology platforms and tools">
+            <span class="trust-chip">ePROMIS</span>
+            <span class="trust-chip">Microsoft D365</span>
+            <span class="trust-chip">Zoho</span>
+            <span class="trust-chip">SQL Server</span>
+            <span class="trust-chip">Power BI</span>
+            <span class="trust-chip">AI Agents</span>
+            <span class="trust-chip">Web Development</span>
+
+          </div>
+        </div>
+        <aside class="hero-panel reveal">
+          <p class="hero-panel-label">At a glance</p>
+          <ul class="hero-panel-list">
+            <li>
+              <span class="hero-panel-kicker">Current focus</span>
+              <span class="hero-panel-value">Group-wide transformation across 25+ subsidiaries</span>
+            </li>
+            <li>
+              <span class="hero-panel-kicker">Core strength</span>
+              <span class="hero-panel-value">ERP delivery, AI automation, and integration strategy</span>
+            </li>
+            <li>
+              <span class="hero-panel-kicker">Functional range</span>
+              <span class="hero-panel-value">Finance, HR, payroll, procurement, inventory, and operations</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="section-label">About Me</p>
+          <h2 class="section-heading">Strategic transformation, grounded in delivery.</h2>
+          <p class="about-copy">
+            Tammam is a Digital Transformation Lead with over 6 years of progressive experience in ERP systems, enterprise applications, and business process automation. Currently leading a group-wide digital transformation program across 25+ subsidiaries at Abdulla Al Arif Investment Group, covering construction, manufacturing, sports, and real estate divisions. He combines deep techno-functional ERP expertise with strategic transformation exposure, bridging the gap between executive vision and on-the-ground technology execution.
+          </p>
+        </div>
+        <div class="highlights-grid">
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">HQ</div>
+            <strong>25+ Subsidiaries Transformed</strong>
+            <span>Enterprise-scale transformation across construction, manufacturing, sports, and real estate divisions.</span>
+          </article>
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">ERP</div>
+            <strong>4 ERP Platforms Implemented</strong>
+            <span>Hands-on delivery across ePROMIS, Microsoft Dynamics 365 BC, Zoho, and Horizon.</span>
+          </article>
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">AI</div>
+            <strong>AI Agents for Finance &amp; HR</strong>
+            <span>Automation spanning reconciliations, 3-way matching, recruitment workflows, and intelligent process execution.</span>
+          </article>
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">SQL</div>
+            <strong>Senior SQL Developer</strong>
+            <span>SQL Server, MySQL, database architecture, optimization, procedures, and data integrity management.</span>
+          </article>
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">WEB</div>
+            <strong>Web Development</strong>
+            <span>PHP, Laravel, and JavaScript for internal tools and ERP-connected applications.</span>
+          </article>
+          <article class="highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">BSc</div>
+            <strong>UAE / Qatar / KSA / B.Sc.</strong>
+            <span>Regional operating context backed by a B.Sc. in Telecommunications Engineering.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <p class="section-label reveal">Services</p>
+        <h2 class="section-heading reveal">What I Can Do For Your Business</h2>
+        <p class="section-intro reveal">
+          Advisory, implementation leadership, and technical execution for organizations that need enterprise systems to perform with more clarity, control, and measurable business value.
+        </p>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>ERP Implementation &amp; Rollout</h3>
+            <p>Full lifecycle ERP delivery from requirements gathering and solution design to configuration, migration, UAT, training, and post-go-live stabilization across ePROMIS, D365, Zoho, and Horizon.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 17L18 7M8 7h10v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Digital Transformation Strategy</h3>
+            <p>Enterprise-wide digital roadmaps aligned to business priorities, governance needs, and multi-entity operating models for holding groups and complex organizations.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M3 12h4M17 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>AI Agent &amp; Workflow Automation</h3>
+            <p>Design and deployment of AI-driven automation for supplier reconciliation, bank reconciliation, 3-way invoice matching, recruitment workflows, onboarding, and operational efficiency.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 4v16M17 4v16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>Multi-System Integration Architecture</h3>
+            <p>Integration planning for ERP, CRM, POS, e-commerce, and booking platforms, helping organizations connect fragmented systems into one operational picture.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 6h14M5 12h14M5 18h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>Business Analysis &amp; ERP Advisory</h3>
+            <p>Independent business analysis, ERP vendor evaluation, demo facilitation, commercial negotiation support, and technology selection for high-stakes transformation decisions.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>Reporting &amp; Data Visibility</h3>
+            <p>Power BI and advanced SQL dashboards for finance, operations, HR, and procurement that give executives a real-time view of business performance.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4zM8 10h8M8 14h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Database Design &amp; SQL Development</h3>
+            <p>Senior-level SQL Server and MySQL work including schema design, query optimization, stored procedures, database architecture, and enterprise-grade data integrity controls.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5M13 4l-2 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Web Application Development</h3>
+            <p>Custom internal tools and ERP-interfacing applications built with PHP, Laravel, and JavaScript to bridge business processes with usable front-end workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="experience">
+      <div class="container">
+        <p class="section-label reveal">Portfolio</p>
+        <h2 class="section-heading reveal">Projects &amp; Case Studies</h2>
+        <p class="section-intro reveal">
+          A curated selection of personal projects, automation tools, and transformation case studies. Updated regularly.
+        </p>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-card" style="border: 1.5px dashed var(--border); background: transparent; text-align: center; padding: 48px 32px;">
+              <p style="color: var(--muted); font-size: 1rem; margin: 0; line-height: 1.7;">
+                &#128679; Personal projects and case studies coming soon.<br>
+                <span style="font-size: 0.9rem; opacity: 0.7;">This section will showcase selected work, tools built, and transformation case studies.</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <p class="section-label reveal">Testimonials</p>
+        <h2 class="section-heading reveal">What People Say</h2>
+        <div class="testimonials-grid">
+          <article class="quote-card reveal">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <p>I have the pleasure of having Tammam as part of the strategy & Innovation team at Abdulla Al Arif Investment. His recruitment came at a crucial time in our digitization journey, where Tammam showed the utmost professionalism and attention to details.
+              As a diverse Group, Tammam is faced with a multitude of business scenarios everyday and is leading the efforts to embed AI and Process Automation in our processes, quickly showing a strong capability in translating narrated processes into understandable workflows, how said workflows align with the overall Group's functioning and the operational and/or software adjustments that need to be made.
+              Another noteworthy capability is the 'people' skills - with change management being the biggest scope of any such transformation - something Tammam doesn't disregard and excels at (quickly being seen as an improvement catalyzer, as opposed to an agenda enforcer).</p>
+            <div class="quote-meta">
+              <strong>Alexandre Lagoa</strong>
+              <span>Group Strategy Director</span>
+            </div>
+          </article>
+          <article class="quote-card reveal">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <p>I have worked closely with Tammam during a complex ERP implementation initiative and have found him to be a highly competent and dependable ERP professional.
+              Tammam demonstrates a strong understanding of enterprise systems, end-to-end system architecture, and operational process flows. He has the ability to quickly analyze business requirements, understand how operations function in practice, and align them effectively with system design and configuration. His structured approach and clarity of thought have been instrumental in ensuring smooth coordination between operational teams and system workflows.
+              What distinguishes Tammam is his ability to bridge the gap between technical functionality and business operations. He communicates effectively with stakeholders at different levels, anticipates risks, and provides practical, well-considered solutions that support both operational efficiency and management objectives.</p>
+            <div class="quote-meta">
+              <strong>Gayan Thushara</strong>
+              <span>Assistant Strategy Manager</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section-label reveal">Contact</p>
+        <h2 class="section-heading reveal">Let's Build Something Together</h2>
+        <p class="section-intro reveal">
+          Whether you're looking to transform your enterprise systems, automate key processes, or bring on a senior transformation leader, I'd love to hear from you.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Contact details</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><strong>Email</strong><a href="mailto:tammamtk96@gmail.com">tammamtk96@gmail.com</a></div>
+              </div>
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 5h3l2 5-2 1.5a15.6 15.6 0 0 0 4.5 4.5L16 14l5 2v3a2 2 0 0 1-2 2h-1C10.82 21 3 13.18 3 4V3a2 2 0 0 1 2-2h3z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><strong>Phone</strong><a href="tel:+971528722839">+971 528722839</a></div>
+              </div>
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6-5.686 6-11a6 6 0 1 0-12 0c0 5.314 6 11 6 11z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+                <div><strong>Location</strong>Dubai, UAE</div>
+              </div>
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 11v5M12 8v8M16 13v3M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                <div><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/tammam-altaki-887637211/" target="_blank" rel="noreferrer">Tammam Altaki</a></div>
+              </div>
+            </div>
+            <p class="availability">
+              <strong>Available for:</strong><br>
+              Freelance Consulting / Full-time Senior Roles / Advisory
+            </p>
+          </div>
+
+          <div class="reveal">
+            <div class="success-banner" id="form-success" role="status" aria-live="polite">
+              Thanks! I'll get back to you within 24 hours.
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/mreanvkl" method="POST">
+              <!-- To activate: sign up free at formspree.io, create a form, and replace YOUR_FORM_ID with your actual form ID -->
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <select id="subject" name="subject" required>
+                    <option value="Consulting Inquiry">Consulting Inquiry</option>
+                    <option value="Job Opportunity">Job Opportunity</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button class="button" type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-links">
+        <a class="footer-link" href="https://www.linkedin.com/in/tammam-altaki-887637211/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 9v8M7 6.5v.01M11 17v-4.5A2.5 2.5 0 0 1 13.5 10 2.5 2.5 0 0 1 16 12.5V17M4 4h16v16H4z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-link" href="mailto:tammamtk96@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="footer-meta">&copy; 2025 Tammam Altaki. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector('.site-header');
+    const menuToggle = document.querySelector('.menu-toggle[aria-controls="mobile-drawer"]');
+    const drawer = document.getElementById('mobile-drawer');
+    const closeTargets = drawer.querySelectorAll('[data-close-menu], .mobile-nav a, .mobile-panel .button');
+    const revealElements = document.querySelectorAll('.reveal');
+    const successBanner = document.getElementById('form-success');
+
+    const handleHeaderState = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    };
+
+    const toggleMenu = (open) => {
+      const isOpen = typeof open === 'boolean' ? open : drawer.getAttribute('aria-hidden') === 'true';
+      drawer.setAttribute('aria-hidden', String(!isOpen));
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    };
+
+    menuToggle.addEventListener('click', () => toggleMenu(true));
+    closeTargets.forEach((target) => target.addEventListener('click', () => toggleMenu(false)));
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') {
+        toggleMenu(false);
+      }
+    });
+
+    window.addEventListener('scroll', handleHeaderState, { passive: true });
+    handleHeaderState();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.18,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach((element, index) => {
+        element.style.transitionDelay = `${Math.min(index % 3, 2) * 80}ms`;
+        observer.observe(element);
+      });
+    } else {
+      revealElements.forEach((element) => element.classList.add('is-visible'));
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true' && successBanner) {
+      successBanner.classList.add('is-visible');
+      if (window.history.replaceState) {
+        const cleanUrl = `${window.location.pathname}${window.location.hash}`;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+    }
+  </script>
+</body>
+</html>
